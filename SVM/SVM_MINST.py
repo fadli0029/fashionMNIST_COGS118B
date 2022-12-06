@@ -38,6 +38,10 @@ accuracy =  accuracy_score(y_true=y_test, y_pred=y_pred)
 print(confusion_matrix(y_true=y_test, y_pred=y_pred))
 plt.imshow(confusion_matrix(y_true=y_test, y_pred=y_pred), cmap=plt.cm.hot)
 plt.colorbar()
+class_names = ['T-shirt', 'Trouser', 'Pullover', 'Dress', 'Coat',
+               'Sandal', 'Skirt', 'Sneaker', 'Bag', 'boot']
+plt.xticks([0,1,2,3,4,5,6,7,8,9],class_names,rotation=-40)
+plt.yticks([0,1,2,3,4,5,6,7,8,9],class_names)
 plt.title('Support Vector Machine\nAccuracy: ' + str((1 - accuracy)*100) + '% error')
 plt.xlabel('Predicted')
 plt.ylabel('True Value')
